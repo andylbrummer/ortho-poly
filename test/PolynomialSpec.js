@@ -8,7 +8,7 @@
  */
 
 import { expect } from 'chai';
-import { laguerre, polynomial, legendre, hermite, chebyshev } from '../src/Polynomial';
+import { laguerre, polynomial, legendre, hermite, chebyshev } from '../src/index';
 
 describe('polynomial', () => {
   describe('Polynomial.print()', () => {

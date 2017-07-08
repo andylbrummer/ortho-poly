@@ -1,10 +1,6 @@
-function glFloat(int) {
-  const r = int.toString();
-  if (r.indexOf('.') === -1) return `${r}.0`;
-  return r;
-}
+import glFloat from './glFloat';
 
-export function polynomial(v) {
+export default function polynomial(v) {
   return {
     v,
     f(x) {
@@ -115,49 +111,3 @@ export function polynomial(v) {
   };
 }
 
-export function laguerre(n, alpha) {
-  if (n === 0) return polynomial([1]);
-  if (n === 1) return polynomial([1 + alpha, -1]);
-
-  const k = n - 1;
-  const l1 = polynomial([2 * k + 1 + alpha, -1]).m(laguerre(k, alpha));
-  const l2 = polynomial([-(k + alpha)]).m(laguerre(k - 1, alpha));
-
-  return (l1.a(l2)).s(1 / n);
-}
-
-export function legendre(n) {
-  if (n === 0) return polynomial([1]);
-  if (n === 1) return polynomial([0, 1]);
-
-  const k = n - 1;
-  const f1 = polynomial([0, 2 * k + 1]).m(legendre(k));
-  const f2 = legendre(n - 2).s(-k);
-
-  return f2.a(f1).s(1 / n);
-}
-
-export function hermite(n) {
-  if (n === 0) return polynomial([1]);
-  if (n === 1) return polynomial([0, 2]);
-
-  const k = n - 1;
-  const f1 = polynomial([0, 2]).m(hermite(k));
-  const f2 = hermite(k - 1).s(-2 * k);
-
-  return f2.a(f1);
-}
-
-export function chebyshev(n) {
-  if (n === 0) return polynomial([1]);
-  if (n === 1) return polynomial([0, 1]);
-  const f1 = polynomial([0, 2]).m(chebyshev(n - 1));
-  return f1.sub(chebyshev(n - 2));
-}
-
-export function chebyshev2(n) {
-  if (n === 0) return polynomial([1]);
-  if (n === 1) return polynomial([0, 2]);
-  const f1 = polynomial([0, 2]).m(chebyshev(n - 1));
-  return f1.sub(chebyshev(n - 2));
-}

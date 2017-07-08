@@ -14,16 +14,14 @@
       "es2015",
       "stage-0"
     ],
-    "plugins": [
-      "transform-runtime"
-    ]
+    "plugins": []
   },
   "eslintConfig": {
     "parser": "babel-eslint",
     "extends": "airbnb/base"
   },
   "dependencies": {
-    "babel-runtime": "^6.6.1"
+    "babel-runtime": "6.23.0"
   },
   "devDependencies": {
     "babel-cli": "^6.8.0",

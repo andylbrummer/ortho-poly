@@ -7,4 +7,8 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-export Greeting from './Greeting.js';
+export polynomial from './polynomial';
+export laguerre from './laguerre';
+export legendre from './legendre';
+export hermite from './hermite';
+export chebyshev from './chebyshev';
