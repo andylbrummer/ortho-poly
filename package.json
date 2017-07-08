@@ -1,12 +1,20 @@
 {
   "private": false,
   "name": "ortho-poly",
-  "version": "1.0.1",
-  "description": "Generate orthoganal polynomials of types: Laguerre, Chebyshev and Hermite.",
+  "version": "1.0.2",
+  "description": "Generate orthoganal polynomials of types: Laguerre, Legendre, Chebyshev and Hermite.",
   "repository": "andylbrummer/ortho-poly",
   "author": "Andy Brummer",
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "polynomial",
+    "math",
+    "laguerre",
+    "legendre",
+    "chebyshev",
+    "hermite",
+    "quantum mechanics"
+  ],
   "main": "index.js",
   "jsnext:main": "index.es6.js",
   "babel": {
