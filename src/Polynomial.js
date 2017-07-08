@@ -1,5 +1,3 @@
-import glFloat from './glFloat';
-
 export default function polynomial(v) {
   return {
     v,
@@ -73,7 +71,7 @@ export default function polynomial(v) {
     print() {
       const vl = v.length;
       let r = '';
-      let s = '';
+      let plus = '';
       if (vl === 0) return '0';
       if (vl === 1) return v[0].toString();
 
@@ -81,32 +79,18 @@ export default function polynomial(v) {
         const c = v[i];
         if (c === 0) continue;
 
-        if (c >= 0) r += s;
+        if (c >= 0) r += plus;
         if (c !== 1 || i === 0) r += v[i].toString();
 
         if (i === 1) r += 'x';
         if (i !== 0 && i !== 1) r += `x<sup>${i.toString()}</sup>`;
-        s = '+';
+        plus = '+';
       }
       return r;
     },
-    // Generate a string version of the polynomial in a format for webGL shaders.
-    fx(constiable) {
-      const vl = v.length;
-      let r = '';
-      if (vl === 0) return '0.0';
-      if (vl === 1) return glFloat(v[0]);
-
-      for (let i = vl - 2; i--;) {
-        r += '(';
-      }
-      r += `${glFloat(v[vl - 1])}*${constiable}`;
-      if (v[vl - 2] !== 0) r += `+${glFloat(v[vl - 2])}`;
-      for (let i = vl - 2; i--;) {
-        r += `)*${constiable}`;
-        if (v[i] !== 0) r += `+${glFloat(v[i])}`;
-      }
-      return r;
+    // Get a simple array version of the polynomial indexed by variable power.
+    toArray() {
+      return v;
     },
   };
 }

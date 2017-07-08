@@ -1,7 +1,7 @@
 {
-  "private": true,
+  "private": false,
   "name": "ortho-poly",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Generate orthoganal polynomials of types: Laguerre, Chebyshev and Hermite.",
   "repository": "andylbrummer/ortho-poly",
   "author": "Andy Brummer",
