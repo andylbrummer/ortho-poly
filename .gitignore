@@ -3,6 +3,7 @@
 
 coverage
 /dist
-node_modules/*
-!docs/node_modules/orto-poly/dist
+/node_modules
+/docs/node_modules/ortho-poly/*
+!/docs/node_modules/ortho-poly/dist/
 npm-debug.log
